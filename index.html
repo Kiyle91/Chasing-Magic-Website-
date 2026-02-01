@@ -8,17 +8,19 @@
   <!-- Primary SEO -->
   <title>Olivia’s World: Crystal Keep | Cozy Fantasy Tower Defence Game</title>
   <meta name="description" content="Olivia’s World: Crystal Keep is a cozy fantasy tower-defence adventure by Chasing Magic Studios. Play as unique Guardians, defend crystal spires, and uncover a story about bravery, memory, and magic. Coming to Steam March 2026." />
+  <link rel="canonical" href="https://chasingmagicstudios.com/" />
 
   <!-- Branding -->
   <meta name="author" content="Chasing Magic Studios" />
   <meta name="theme-color" content="#f2a7df" />
 
-  <!-- Open Graph (Discord, Facebook, etc.) -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_GB" />
   <meta property="og:title" content="Olivia’s World: Crystal Keep" />
   <meta property="og:description" content="A cozy fantasy tower-defence adventure. Defend crystal spires, master unique Guardians, and step into a story about courage and magic." />
   <meta property="og:image" content="https://chasingmagicstudios.com/assets/og-image.png" />
-  <meta property="og:url" content="https://chasingmagicstudios.com" />
+  <meta property="og:url" content="https://chasingmagicstudios.com/" />
   <meta property="og:site_name" content="Chasing Magic Studios" />
 
   <!-- Twitter / X -->
@@ -26,6 +28,28 @@
   <meta name="twitter:title" content="Olivia’s World: Crystal Keep" />
   <meta name="twitter:description" content="A cozy fantasy tower-defence adventure by Chasing Magic Studios. Wishlist now on Steam." />
   <meta name="twitter:image" content="https://chasingmagicstudios.com/assets/og-image.png" />
+  <meta name="twitter:url" content="https://chasingmagicstudios.com/" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Olivia’s World: Crystal Keep",
+    "description": "A cozy fantasy tower-defence adventure by Chasing Magic Studios. Defend crystal spires as unique Guardians and uncover a story about bravery, memory, and magic.",
+    "url": "https://chasingmagicstudios.com/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Chasing Magic Studios",
+      "url": "https://chasingmagicstudios.com/"
+    },
+    "genre": ["Tower defense", "Action RPG", "Cozy"],
+    "gamePlatform": ["PC"],
+    "sameAs": [
+      "https://store.steampowered.com/app/4375960/Olivias_World_Crystal_Keep/?beta=1"
+    ]
+  }
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/favicon.png" />
@@ -35,30 +59,35 @@
 </head>
 
 <body>
+
   <main class="hero" role="main">
     <div class="overlay"></div>
 
     <section class="content">
 
-      <!-- BRAND -->
+      <!-- BRAND / TITLE -->
       <header class="brand">
         <div class="brand-row">
           <img class="brand-logo" src="assets/brand.png" alt="Chasing Magic Studios logo" />
           <div class="brand-text">
-            <h1>Chasing Magic Studios</h1>
-            <p class="tagline"> <br> Creator of <strong>Olivia’s World: Crystal Keep</strong></p>
+            <h1>Olivia’s World: Crystal Keep</h1>
+            <p class="tagline">by <strong>Chasing Magic Studios</strong></p>
           </div>
         </div>
       </header>
 
-      <!-- MEDIA CAROUSEL (between brand and card) -->
+      <!-- MEDIA CAROUSEL -->
       <section class="carousel" aria-label="Game media carousel">
         <div class="carousel-track">
 
-          <!-- Slide 1: Trailer -->
+          <!-- Trailer -->
           <div class="carousel-slide active is-video">
-            <video class="carousel-media" src="assets/finished.mov" controls playsinline preload="metadata"
-              poster="assets/hero.png">
+            <video class="carousel-media"
+                   src="assets/finished.mov"
+                   controls
+                   playsinline
+                   preload="metadata"
+                   poster="assets/hero.png">
               Your browser does not support the video tag.
             </video>
             <button type="button" class="carousel-play" aria-label="Play trailer">
@@ -68,43 +97,37 @@
             </button>
           </div>
 
-          <!-- Slide 2 -->
+          <!-- Screens -->
           <div class="carousel-slide">
-            <img class="carousel-media" src="assets/ss2.png" alt="Olivia’s World: Crystal Keep key art" />
+            <img class="carousel-media" src="assets/ss2.png" alt="Olivia’s World Crystal Keep key art" />
           </div>
 
-          <!-- Slide 3 -->
           <div class="carousel-slide">
             <img class="carousel-media" src="assets/icescreen.png" alt="Ice Realm gameplay screenshot" />
           </div>
 
-          <!-- Slide 4 -->
           <div class="carousel-slide">
             <img class="carousel-media" src="assets/screenguardian.png" alt="Guardian selection screen screenshot" />
           </div>
 
-          <!-- Slide 5 -->
           <div class="carousel-slide">
             <img class="carousel-media" src="assets/skinsscreenshot.png" alt="Guardian skins screen screenshot" />
           </div>
 
-          <!-- Slide 6 -->
           <div class="carousel-slide">
             <img class="carousel-media" src="assets/spiresscreenshots.png" alt="Crystal spires gameplay screenshot" />
           </div>
 
-          <!-- Slide 7 -->
           <div class="carousel-slide">
-            <img class="carousel-media" src="assets/voidscreen.png" alt="Voidlands screen screenshot" />
+            <img class="carousel-media" src="assets/voidscreen.png" alt="Voidlands gameplay screenshot" />
           </div>
 
         </div>
 
-        <!-- Arrows -->
+        <!-- Controls -->
         <button type="button" class="carousel-arrow prev" aria-label="Previous slide">&larr;</button>
         <button type="button" class="carousel-arrow next" aria-label="Next slide">&rarr;</button>
 
-        <!-- Dots -->
         <div class="carousel-dots" aria-label="Carousel navigation">
           <button type="button" aria-label="Slide 1" class="dot active"></button>
           <button type="button" aria-label="Slide 2" class="dot"></button>
@@ -117,30 +140,34 @@
       </section>
 
       <!-- CTA CARD -->
-      <div class="card">
+      <section class="card">
         <img class="steam-logo" src="assets/steam.png" alt="Steam logo" />
+
         <h2>Wishlist on Steam</h2>
-        <p>
-          <br><br>Olivia’s World: Crystal Keep is a cosy fantasy tower-defence adventure and the opening chapter of a larger
-          tale. Across a fragile world shaped by magic and memory, crystal spires stand as the last line of hope.
 
-          <br><br>Step into the roles of unique Guardians, each with their own powers, personality, and perspective on the story
-          unfolding around them. Defend the spires against rising enemy waves, adapting your strategy as the threat grows. Explore gentle, story-driven moments that hint at a much larger saga yet to come.
+        <div class="blurb">
+          <p>Olivia’s World: Crystal Keep is a cosy fantasy tower-defence adventure and the opening chapter of a larger tale. Across a fragile world shaped by magic and memory, crystal spires stand as the last line of hope.</p>
 
-          <br><br>Rely upon enchanted steeds and special abilities when courage alone is not enough. This is a world where bravery is not about being fearless.
+          <p>Step into the roles of unique Guardians, each with their own powers, personality, and perspective on the story unfolding around them. Defend the spires against rising enemy waves, adapting your strategy as the threat grows.</p>
 
-          <br><br>It is about standing firm, even when you doubt yourself.
+          <p>Explore gentle, story-driven moments that hint at a much larger saga yet to come.</p>
 
-          <br><br>And choosing to protect what matters.
+          <p>Rely upon enchanted steeds and special abilities when courage alone is not enough.</p>
 
+          <p>This is a world where bravery is not about being fearless.</p>
 
+          <p>It is about standing firm, even when you doubt yourself.</p>
 
-          <br><br><br><strong>Planned Release Date: 9th March 2026</strong><br><br>
-        </p>
+          <p>And choosing to protect what matters.</p>
+
+          <p><strong>Planned Release Date: 9th March 2026</strong></p>
+        </div>
 
         <div class="buttons">
-          <a class="btn steam" href="https://store.steampowered.com/app/4375960/Olivias_World_Crystal_Keep/?beta=1"
-            target="_blank" rel="noopener">
+          <a class="btn steam"
+             href="https://store.steampowered.com/app/4375960/Olivias_World_Crystal_Keep/?beta=1"
+             target="_blank"
+             rel="noopener">
             Wishlist on Steam
           </a>
 
@@ -150,10 +177,10 @@
         </div>
 
         <p class="small">
-          <br>For press & partnerships:
+          For press & partnerships:
           <a href="mailto:press@chasingmagicstudios.com">press@chasingmagicstudios.com</a>
         </p>
-      </div>
+      </section>
 
       <footer class="footer">
         <p>© <span id="year"></span> Chasing Magic Studios</p>
@@ -179,8 +206,6 @@
     function showSlide(index) {
       slides.forEach((slide, i) => {
         slide.classList.toggle('active', i === index);
-
-        // Pause videos when not active
         const video = slide.querySelector('video');
         if (video && i !== index) video.pause();
       });
@@ -190,11 +215,6 @@
       });
 
       current = index;
-    }
-
-    function updatePlayButton() {
-      if (!trailerVideo || !trailerPlay) return;
-      trailerPlay.classList.toggle('hidden', !trailerVideo.paused);
     }
 
     function nextSlide() {
@@ -209,22 +229,16 @@
       dot.addEventListener('click', () => showSlide(i));
     });
 
-    if (prevBtn && nextBtn) {
-      prevBtn.addEventListener('click', prevSlide);
-      nextBtn.addEventListener('click', nextSlide);
-    }
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
 
     if (trailerVideo && trailerPlay) {
-      trailerPlay.addEventListener('click', () => {
-        trailerVideo.play();
-      });
-
-      trailerVideo.addEventListener('play', updatePlayButton);
-      trailerVideo.addEventListener('pause', updatePlayButton);
-      trailerVideo.addEventListener('ended', updatePlayButton);
-      updatePlayButton();
+      trailerPlay.addEventListener('click', () => trailerVideo.play());
+      trailerVideo.addEventListener('play', () => trailerPlay.classList.add('hidden'));
+      trailerVideo.addEventListener('pause', () => trailerPlay.classList.remove('hidden'));
+      trailerVideo.addEventListener('ended', () => trailerPlay.classList.remove('hidden'));
     }
   </script>
-</body>
 
+</body>
 </html>

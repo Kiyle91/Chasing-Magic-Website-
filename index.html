@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chasing Magic Studios</title>
+  <meta name="description" content="Chasing Magic Studios — Olivia’s World: Crystal Keep. Wishlist on Steam." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="hero" role="main">
+    <div class="overlay"></div>
+
+    <section class="content">
+
+      <!-- BRAND -->
+      <header class="brand">
+        <div class="brand-row">
+          <img class="brand-logo" src="assets/brand.png" alt="Chasing Magic Studios logo" />
+          <div class="brand-text">
+            <h1>Chasing Magic Studios</h1>
+            <p class="tagline">Creator of <strong>Olivia’s World: Crystal Keep</strong></p>
+          </div>
+        </div>
+      </header>
+
+      <!-- MEDIA CAROUSEL (between brand and card) -->
+      <section class="carousel" aria-label="Game media carousel">
+        <div class="carousel-track">
+
+          <!-- Slide 1: Trailer -->
+          <div class="carousel-slide active is-video">
+            <video
+              class="carousel-media"
+              src="assets/finished.mov"
+              controls
+              playsinline
+              preload="metadata"
+              poster="assets/hero.png">
+              Your browser does not support the video tag.
+            </video>
+            <button type="button" class="carousel-play" aria-label="Play trailer">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <polygon points="8,5 19,12 8,19"></polygon>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <img
+              class="carousel-media"
+              src="assets/ss2.png"
+              alt="Olivia’s World: Crystal Keep key art" />
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-slide">
+            <img
+              class="carousel-media"
+              src="assets/icescreen.png"
+              alt="Ice Realm gameplay screenshot" />
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="carousel-slide">
+            <img
+              class="carousel-media"
+              src="assets/screenguardian.png"
+              alt="Guardian selection screen screenshot" />
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="carousel-slide">
+            <img
+              class="carousel-media"
+              src="assets/skinsscreenshot.png"
+              alt="Guardian skins screen screenshot" />
+          </div>
+
+          <!-- Slide 6 -->
+          <div class="carousel-slide">
+            <img
+              class="carousel-media"
+              src="assets/spiresscreenshots.png"
+              alt="Crystal spires gameplay screenshot" />
+          </div>
+
+          <!-- Slide 7 -->
+          <div class="carousel-slide">
+            <img
+              class="carousel-media"
+              src="assets/voidscreen.png"
+              alt="Voidlands screen screenshot" />
+          </div>
+
+        </div>
+
+        <!-- Arrows -->
+        <button type="button" class="carousel-arrow prev" aria-label="Previous slide">&larr;</button>
+        <button type="button" class="carousel-arrow next" aria-label="Next slide">&rarr;</button>
+
+        <!-- Dots -->
+        <div class="carousel-dots" aria-label="Carousel navigation">
+          <button type="button" aria-label="Slide 1" class="dot active"></button>
+          <button type="button" aria-label="Slide 2" class="dot"></button>
+          <button type="button" aria-label="Slide 3" class="dot"></button>
+          <button type="button" aria-label="Slide 4" class="dot"></button>
+          <button type="button" aria-label="Slide 5" class="dot"></button>
+          <button type="button" aria-label="Slide 6" class="dot"></button>
+          <button type="button" aria-label="Slide 7" class="dot"></button>
+        </div>
+      </section>
+
+      <!-- CTA CARD -->
+      <div class="card">
+        <h2>Wishlist on Steam</h2>
+        <p>
+          A cosy fantasy tower-defense adventure with Guardians, crystals, and story.
+        </p>
+
+        <div class="buttons">
+          <a class="btn steam" href="https://store.steampowered.com/app/4375960/Olivias_World_Crystal_Keep/?beta=1" target="_blank" rel="noopener">
+            Wishlist on Steam
+          </a>
+
+          <a class="btn support" href="mailto:contact@chasingmagicstudios.com">
+            Contact Support
+          </a>
+        </div>
+
+        <p class="small">
+          For press & partnerships:
+          <a href="mailto:press@chasingmagicstudios.com">press@chasingmagicstudios.com</a>
+        </p>
+      </div>
+
+      <footer class="footer">
+        <p>© <span id="year"></span> Chasing Magic Studios</p>
+      </footer>
+
+    </section>
+  </main>
+
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Carousel logic
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dots .dot');
+    const prevBtn = document.querySelector('.carousel-arrow.prev');
+    const nextBtn = document.querySelector('.carousel-arrow.next');
+    const trailerSlide = document.querySelector('.carousel-slide.is-video');
+    const trailerVideo = trailerSlide ? trailerSlide.querySelector('video') : null;
+    const trailerPlay = trailerSlide ? trailerSlide.querySelector('.carousel-play') : null;
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+
+        // Pause videos when not active
+        const video = slide.querySelector('video');
+        if (video && i !== index) video.pause();
+      });
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+
+      current = index;
+    }
+
+    function updatePlayButton() {
+      if (!trailerVideo || !trailerPlay) return;
+      trailerPlay.classList.toggle('hidden', !trailerVideo.paused);
+    }
+
+    function nextSlide() {
+      showSlide((current + 1) % slides.length);
+    }
+
+    function prevSlide() {
+      showSlide((current - 1 + slides.length) % slides.length);
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => showSlide(i));
+    });
+
+    if (prevBtn && nextBtn) {
+      prevBtn.addEventListener('click', prevSlide);
+      nextBtn.addEventListener('click', nextSlide);
+    }
+
+    if (trailerVideo && trailerPlay) {
+      trailerPlay.addEventListener('click', () => {
+        trailerVideo.play();
+      });
+
+      trailerVideo.addEventListener('play', updatePlayButton);
+      trailerVideo.addEventListener('pause', updatePlayButton);
+      trailerVideo.addEventListener('ended', updatePlayButton);
+      updatePlayButton();
+    }
+  </script>
+</body>
+</html>

@@ -37,12 +37,17 @@ body {
   gap: 18px;
 
   align-content: start;
-  padding-top: 38px;
+  padding-top: 104px;
 }
 
 /* Shared nav */
 .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 .site-nav {
@@ -50,10 +55,11 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 14px;
-  padding: 10px 14px;
-  border-radius: 16px;
+  width: 100%;
+  padding: 10px 24px;
+  border-radius: 0;
   background: rgba(12, 12, 16, 0.45);
-  border: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
   backdrop-filter: blur(8px);
 }
 
@@ -475,10 +481,15 @@ body {
 
 /* Mobile tweaks */
 @media (max-width: 520px) {
+  .content {
+    padding-top: 160px;
+  }
+
   .site-nav {
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
+    padding: 10px 12px;
   }
 
   .nav-brand {

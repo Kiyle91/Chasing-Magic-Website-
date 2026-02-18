@@ -12,7 +12,6 @@ body {
   position: relative;
   min-height: 100vh;
 
-  /* Use your background image here */
   background: url("assets/hero.png") center/cover no-repeat fixed;
 
   display: grid;
@@ -37,9 +36,72 @@ body {
   display: grid;
   gap: 18px;
 
-  /* push content upward a bit */
   align-content: start;
   padding-top: 38px;
+}
+
+/* Shared nav */
+.site-header {
+  width: 100%;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 14px;
+  border-radius: 16px;
+  background: rgba(12, 12, 16, 0.45);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+}
+
+.nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.nav-brand-logo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  display: inline-block;
+  text-decoration: none;
+  color: rgba(255,255,255,0.92);
+  border-radius: 10px;
+  border: 1px solid transparent;
+  padding: 8px 12px;
+  font-weight: 600;
+  transition: background 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.16);
+  color: #fff;
+}
+
+.nav-links a.active {
+  background: rgba(255,140,220,0.20);
+  border-color: rgba(255,255,255,0.24);
+  color: #fff;
 }
 
 /* Brand / title area */
@@ -241,6 +303,80 @@ body {
   text-align: center;
 }
 
+.info-card {
+  text-align: left;
+}
+
+.page-card {
+  max-width: 900px;
+  text-align: left;
+}
+
+.page-card h2 {
+  margin-bottom: 8px;
+}
+
+.feature-list,
+.asset-list {
+  margin: 8px 0 18px;
+  padding-left: 20px;
+}
+
+.feature-list li,
+.asset-list li {
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+.fact-sheet {
+  margin: 8px 0 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 10px;
+}
+
+.fact-sheet div {
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.05);
+}
+
+.fact-sheet dt {
+  margin: 0;
+  font-weight: 700;
+}
+
+.fact-sheet dd {
+  margin: 4px 0 0;
+}
+
+.press-gallery {
+  margin: 10px 0 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.press-gallery img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.14);
+  display: block;
+}
+
+.page-card .buttons {
+  justify-items: start;
+}
+
+.page-card .btn.steam {
+  min-width: min(420px, 100%);
+}
+
+.page-card .btn.support {
+  min-width: min(300px, 100%);
+}
+
 .steam-logo {
   position: absolute;
   top: 14px;
@@ -320,7 +456,11 @@ body {
   opacity: 0.95;
 }
 
-.small a { color: #fff; }
+.small a,
+.asset-list a,
+.page-link {
+  color: #fff;
+}
 
 /* Footer */
 .footer {
@@ -333,6 +473,25 @@ body {
 
 /* Mobile tweaks */
 @media (max-width: 520px) {
+  .site-nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .nav-brand {
+    justify-content: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    padding: 7px 10px;
+  }
+
   .brand-row {
     gap: 10px;
     padding: 10px 12px;
@@ -341,6 +500,12 @@ body {
   .brand-logo {
     width: 48px;
     height: 48px;
+    margin-right: 6px;
+  }
+
+  .tagline {
+    text-align: left;
+    margin-right: 0;
   }
 
   .carousel-media {
@@ -370,6 +535,10 @@ body {
     width: 40px;
     top: 8px;
     right: 8px;
+  }
+
+  .page-card .buttons {
+    justify-items: center;
   }
 }
 
